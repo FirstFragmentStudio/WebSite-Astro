@@ -53,6 +53,35 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 					</div>
 				)}
 			</section>
+			{game.slug === 'fossil-in-the-sand' && (
+				<section class="concept-gallery" aria-labelledby="concept-gallery-title">
+					<h2 id="concept-gallery-title">Character concepts</h2>
+					<div class="concept-gallery__grid">
+						<figure class="concept-card">
+							<div class="concept-card__frame">
+								<img
+									src={`${baseUrl}FossilInTheSand/FINTS-FemaleLead.png`}
+									alt="Female lead exploring an ancient underground ruin"
+									width="704"
+									height="384"
+								/>
+							</div>
+							<figcaption>Female Lead</figcaption>
+						</figure>
+						<figure class="concept-card">
+							<div class="concept-card__frame">
+								<img
+									src={`${baseUrl}FossilInTheSand/FINTS-MaleLead.png`}
+									alt="Male lead exploring an ancient underground ruin"
+									width="1408"
+									height="768"
+								/>
+							</div>
+							<figcaption>Male Lead</figcaption>
+						</figure>
+					</div>
+				</section>
+			)}
 		</div>
 	</main>
 </Layout>
@@ -83,6 +112,53 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 		grid-template-columns: minmax(0, 1fr) minmax(150px, 220px);
 		gap: clamp(2rem, 7vw, 5rem);
 		align-items: center;
+	}
+
+	.concept-gallery {
+		margin-top: clamp(4rem, 10vh, 7rem);
+	}
+
+	.concept-gallery h2 {
+		margin: 0 0 1.5rem;
+		color: #d7b98a;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(1.75rem, 4vw, 2.5rem);
+		font-weight: 400;
+	}
+
+	.concept-gallery__grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: clamp(1.5rem, 4vw, 2.5rem);
+	}
+
+	.concept-card {
+		min-width: 0;
+		margin: 0;
+	}
+
+	.concept-card__frame {
+		padding: .65rem;
+		border: 8px solid #795f36;
+		outline: 2px solid #caa255;
+		outline-offset: -4px;
+		background: #17140f;
+		box-shadow: 0 1rem 2rem rgb(0 0 0 / 35%);
+	}
+
+	.concept-card__frame img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.concept-card figcaption {
+		margin-top: .9rem;
+		color: #caa255;
+		font-size: .75rem;
+		font-weight: 600;
+		letter-spacing: .14em;
+		text-transform: uppercase;
 	}
 
 	.character-art {
@@ -169,6 +245,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 		.game-detail--with-character {
 			grid-template-columns: 1fr;
 			gap: 1.5rem;
+		}
+
+		.concept-gallery {
+			margin-top: 4rem;
+		}
+
+		.concept-gallery__grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
 		}
 
 		.character-art {
