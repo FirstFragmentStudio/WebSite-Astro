@@ -1,5 +1,6 @@
 ---
 import type { Game } from '../data/games';
+import GameTitle from './GameTitle.astro';
 
 interface Props {
 	game: Game;
@@ -10,7 +11,7 @@ const { game } = Astro.props;
 
 <a class="game-card" href={`/games/${game.slug}/`}>
 	<span class="game-card-status">In development</span>
-	<h3>{game.title}</h3>
+	<h3><GameTitle game={game} /></h3>
 	<span class="game-card-link">Discover the game <span aria-hidden="true">↗</span></span>
 </a>
 
