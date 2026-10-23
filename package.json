@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "generate:social": "node Scripts/SocialImage.mjs",
     "astro": "astro"
   },
   "dependencies": {
@@ -19,5 +20,8 @@
     "lucide-astro": "^0.556.0",
     "swiper": "^14.3.0",
     "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
   }
 }
